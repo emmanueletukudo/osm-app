@@ -39,7 +39,9 @@ const Map = ({ place }) => {
 
       {place && (<Marker position={selectedPlace} icon={icon}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          <p className="text-1xl font-black" style={{ maxWidth: "200px" }}>{place?.display_name}</p>
+          {place?.address.city && <p className="text-md font-gray">City: {place?.address.city}</p>}
+          <p className="text-md font-gray">Country: {place?.address.country}</p>
         </Popup>
       </Marker>)}
 
