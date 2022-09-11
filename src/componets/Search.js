@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchFunc } from '../api/location';
 const maker = "../maker.png";
 
-const Search = () => {
+const Search = ({ place, setPlace }) => {
   const [search, setSearch] = useState("");
   const [palces, setPlaces] = useState([]);
   const [show, setShow] = useState(false);
@@ -17,14 +17,12 @@ const Search = () => {
   const searchMap = (e) => {
     e.preventDefault();
     fetchFunc(search).then(res => {
+      console.log(res);
       setPlaces(res)
       setShow(true)
     });
   }
 
-  const handleSearch = (l) => {
-    console.log(l);
-  }
   return (
 
     <form>
@@ -39,7 +37,7 @@ const Search = () => {
       {show &&
         <ul role="list" className="p-6 divide-y divide-slate-200 bg-gray-50 dark:bg-gray-300">
           {palces.map((p, i) =>
-            <li className="flex py-4 first:pt-0 last:pb-0" key={p?.osm_id} style={{ cursor: "pointer" }}>
+            <li onClick={() => setPlace(p)} className="flex py-4 first:pt-0 last:pb-0" key={p?.osm_id} style={{ cursor: "pointer" }}>
               <img className="h-4 w-4 rounded-full" src={p?.icon ? p?.icon : maker} alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">{p?.display_name}</p>
