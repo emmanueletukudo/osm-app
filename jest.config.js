@@ -1,9 +1,10 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   transformIgnorePatterns: [
-    "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    "node_modules/(?!(@react-leaflet|react-leaflet)/)"
   ],
-
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  }
 };

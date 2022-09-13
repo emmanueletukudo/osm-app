@@ -6,7 +6,6 @@ import L from "leaflet";
 const position = [51.505, -0.09]
 
 const SetNewView = ({ place }) => {
-  console.log(place);
   const map = useMap()
   useEffect(() => {
     if (place) {
@@ -31,7 +30,7 @@ const Map = ({ place }) => {
   const selectedPlace = [place?.lat, place?.lon];
 
   return (
-    <MapContainer center={position} zoom={8} scrollWheelZoom={false} style={{ width: "100%", height: "100vh" }}>
+    <MapContainer data-testid="map" center={position} zoom={8} scrollWheelZoom={false} style={{ width: "100%", height: "100vh" }}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=92BOsJw7RZnlmOtk0mZX"

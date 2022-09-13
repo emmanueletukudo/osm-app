@@ -2,7 +2,7 @@ const OSM_BASE_URL = "https://nominatim.openstreetmap.org/search?"
 
 const fetchFunc = () => {
 
-  return new Promise.resolve(
+  return Promise.resolve(
     [
       {
         "place_id": 237737,
