@@ -1,5 +1,7 @@
 # OSM App
 
+![OSM app](./screenshot1.png)
+
 The OSM app is a location search app based on the open street map data written in `Javascript` and React, bootstrapped with [Create React App](https://github.com/facebook/create-react-app). There are two major dependencies worthing of mention, [React Leaflet](https://react-leaflet.js.org/) for displaying the map, and [Tailwind CSS](https://tailwindcss.com/docs/guides/create-react-app) for building the UI. This project leverages [Nominatum](https://nominatim.openstreetmap.org/)' API for transforming `OSM` data returned from `Open Street map` into `GeoJson`.
 
 ## Instalation/Setup
@@ -21,7 +23,7 @@ You may also see any lint errors in the console.
 Run the `npm test` to start the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Each of the files with their corresponding test cases are named with the `.test.js` extension except the mocked location `API` response that is under the `/api/__mock__` folder.
+Each of the files with their corresponding test cases is named with the `.test.js` extension except the mocked location `API` response that is under the `/api/__mock__` folder.
 
 
 ### Building the application
