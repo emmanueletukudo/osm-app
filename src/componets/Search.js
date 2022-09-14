@@ -27,6 +27,12 @@ const Search = ({ place, setPlace }) => {
     });
   }
 
+  const handlePlaceClick = (e, p) => {
+    e.preventDefault();
+    setPlace(p)
+    setShow(false);
+  }
+
   return (
 
     <form>
@@ -41,7 +47,7 @@ const Search = ({ place, setPlace }) => {
       {show &&
         <ul role="list" data-testid="places-list" className="p-6 divide-y divide-slate-200 bg-gray-50 dark:bg-gray-300">
           {palces.map((p, i) =>
-            <li onClick={() => setPlace(p)} data-testid={`place-item-${i}`} className="flex py-4 first:pt-0 last:pb-0" key={p?.osm_id} style={{ cursor: "pointer" }}>
+            <li onClick={(e) => handlePlaceClick(e, p)} data-testid={`place-item-${i}`} className="flex py-4 first:pt-0 last:pb-0" key={p?.osm_id} style={{ cursor: "pointer" }}>
               <img className="h-4 w-4 rounded-full" src={p?.icon ? p?.icon : maker} alt="" />
               <div className="ml-3 overflow-hidden">
                 <p className="text-sm font-medium text-slate-900">{p?.display_name}</p>

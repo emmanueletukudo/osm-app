@@ -6,7 +6,7 @@ import Search from "./Search";
 
 jest.mock("../api/location");
 test('renders map', () => {
-  const { container, getByTestId } = render(<Map />);
+  const { container } = render(<Map />);
   const map = container.getElementsByClassName("leaflet-container")[0]
   expect(map).toBeInTheDocument();
 });
